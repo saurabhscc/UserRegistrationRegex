@@ -7,13 +7,13 @@ namespace UserRegistration
 {
     class UserValidation
     {
-        public const string PASSWORDRULE2 = "^(?=.*[a-z])(?=.*[A-Z]).{8,}$";
-        /// Validate Password rule 2,should have at least 1 Uppercase with Min.8 Characters 
+        public const string PASSWORDRULE3 = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$";
+        /// Validate Password rule 3,should have at least 1 Numeric & Uppercase each with Min.8 Characters 
         /// </summary>
         /// <returns></returns>
-        public static bool ValidatePasswordR2()
+        public static bool ValidatePasswordR3()
         {
-            Regex regex = new Regex(PASSWORDRULE2);
+            Regex regex = new Regex(PASSWORDRULE3);
             return regex.IsMatch("Sairam77");
         }
     }
