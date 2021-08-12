@@ -6,7 +6,7 @@ namespace UserRegistration
     {
         static void Main(string[] args)
         {
-            bool details = UserValidation.ValidatePasswordR1();
+            bool details = UserValidation.ValidatePasswordR2();
             Console.WriteLine(details);
         }
     }
