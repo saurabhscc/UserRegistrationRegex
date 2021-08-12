@@ -7,15 +7,14 @@ namespace UserRegistration
 {
     class UserValidation
     {
-        public const string EMAILID = "^[a-zA-z]{3}([.]*[a-zA-Z])+[@][a-zA-z]+([.][a-z]{2,3})*$";
-        /// <summary>
-        /// Valid Emailid of user
+        public const string MOBILENUMBER = "^[1-9]{1}[0-9]{1}\\s[1-9]{1}[0-9]{9}$";
+        /// Valid Predefined mobile number of user
         /// </summary>
         /// <returns></returns>
-        public static bool ValidateEmailId()
+        public static bool ValidateMobileNumber()
         {
-            Regex regex = new Regex(EMAILID);
-            return regex.IsMatch("abc.xyz@bl.co.in");
+            Regex regex = new Regex(MOBILENUMBER);
+            return regex.IsMatch("91 9919819801");
         }
     }
 }
