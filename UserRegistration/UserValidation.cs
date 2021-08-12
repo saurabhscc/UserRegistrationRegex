@@ -7,15 +7,15 @@ namespace UserRegistration
 {
     class UserValidation
     {
-        public const string LASTNAME = "^[A-Z]{1}[a-z]{2}";
+        public const string EMAILID = "^[a-zA-z]{3}([.]*[a-zA-Z])+[@][a-zA-z]+([.][a-z]{2,3})*$";
         /// <summary>
-        /// Valid Last name of user
+        /// Valid Emailid of user
         /// </summary>
         /// <returns></returns>
-        public static bool ValidateLastName()
+        public static bool ValidateEmailId()
         {
-            Regex regex = new Regex(LASTNAME);
-            return regex.IsMatch("Kohli");
+            Regex regex = new Regex(EMAILID);
+            return regex.IsMatch("abc.xyz@bl.co.in");
         }
     }
 }
