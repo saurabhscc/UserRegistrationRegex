@@ -7,14 +7,14 @@ namespace UserRegistration
 {
     class UserValidation
     {
-        public const string MOBILENUMBER = "^[1-9]{1}[0-9]{1}\\s[1-9]{1}[0-9]{9}$";
-        /// Valid Predefined mobile number of user
+        public const string PASSWORDRULE1 = "^.{8,}$";
+        /// Validate Password rule 1,should have Minimum 8 Characters
         /// </summary>
         /// <returns></returns>
-        public static bool ValidateMobileNumber()
+        public static bool ValidatePasswordR1()
         {
-            Regex regex = new Regex(MOBILENUMBER);
-            return regex.IsMatch("91 9919819801");
+            Regex regex = new Regex(PASSWORDRULE1);
+            return regex.IsMatch("sairam77");
         }
     }
 }
