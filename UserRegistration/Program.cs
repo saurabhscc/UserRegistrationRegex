@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace UserRegistration
 {
@@ -6,8 +7,7 @@ namespace UserRegistration
     {
         static void Main(string[] args)
         {
-            bool details = UserValidation.ValidatePasswordR4();
-            Console.WriteLine(details);
+            UserValidation.ValidatingEmail();
         }
     }
 }

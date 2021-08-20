@@ -7,14 +7,33 @@ namespace UserRegistration
 {
     class UserValidation
     {
-        public const string PASSWORDRULE4 = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()]).{8,}$";
-        /// Validate Password rule 3,should have at least 1 special char,1 Numeric & Uppercase each with Min.8 Characters 
-        /// </summary>
-        /// <returns></returns>
-        public static bool ValidatePasswordR4()
+        public const string EMAIL_SAMPLE = "^[0-9a-zA-Z]{1,}([._+-][0-9a-zA-Z]{0,})*[@][0-9a-zA-Z]{1,}.[a-zA-Z]{2,3}(.[a-zA-Z]{2,3})?$";
+        public static void ValidatingEmail()
         {
-            Regex regex = new Regex(PASSWORDRULE4);
-            return regex.IsMatch("Sai@ram77");
+            string[] sample = { "abc@yahoo.com", "abc-100@yahoo.com", "abc.100@yahoo.com", "abc-100@abc.net", "abc.100@abc.com.au",
+                                 "abc@1.com", "abc@gmail.com.com", "abc+100@gmail.com" ,"abc@.com","abc123@gmail.a", "abc123@.com" ,
+                                 "abc123@.com.com",".abc@abc.com","abc()*@gmail.com","abc@%*.com","abc.@gmail.com","abc@abc@gmail.com","abc@gmail.com.1a"};
+            Regex regex = new Regex(EMAIL_SAMPLE);
+            Console.WriteLine("Validate the  Email ID's");
+            Console.WriteLine("=========================");
+
+            Validate(sample, regex);
+        }
+        /// <summary>
+        /// printing email id status
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <param name="regex"></param>
+        public static void Validate(string[] arr, Regex regex)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                bool rs = regex.IsMatch(arr[i]);
+                if (rs == true)
+                    Console.WriteLine(arr[i] + "\t------->\t" +  "Valid EmailID");
+                else
+                    Console.WriteLine(arr[i] + "\t-------->\t" + "Invalid EmailID");
+            }
         }
     }
 }
