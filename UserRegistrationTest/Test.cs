@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 using UserRegistration;
 
@@ -78,6 +79,18 @@ namespace UserRegistrationTest
             bool expected = false;
             bool actual = UserValidation.ValidatePasswordR4();
             Assert.AreNotEqual(actual, expected);
+        }
+        [Test]
+        [TestCase("abc@yahoo.com", true)]
+        [TestCase("abc-100@abc.net", true)]
+        [TestCase("abc.100@abc.com.au", true)]
+        [TestCase("abc+100@gmail.com", true)]
+        [TestCase("abc.@gmail.com", true)]
+
+        public void ParameterizedTest(string emailid, bool expected)
+        {
+            bool actual = UserValidation.ValidateEmailId();
+            Assert.AreEqual(actual, expected);
         }
     }
 }
