@@ -5,6 +5,7 @@ namespace UserRegistration
 {
     class Program
     {
+        //Main Method
         static void Main(string[] args)
         {
             UserValidation.ValidatingEmail();
