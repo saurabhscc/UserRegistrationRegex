@@ -14,83 +14,73 @@ namespace UserRegistrationTest
         [Test]
         public void GivenFirstNameValid_ShouldReturnHappy()
         {
-            bool expected = true;
-            bool actual = UserValidation.ValidateFirstName();
+            string expected = "true";
+            string actual = UserValidation.ValidateFirstName("Virat");
             Assert.AreEqual(actual, expected);
         }
         [Test]
         public void GivenLastNameValid_ShouldReturnHappy()
         {
-            bool expected = true;
-            bool actual = UserValidation.ValidateLastName();
+            string expected = "true";
+            string actual = UserValidation.ValidateLastName("Kohli");
             Assert.AreEqual(actual, expected);
         }
         [Test]
         public void GivenEmailValid_ShouldReturnHappy()
         {
-            bool expected = true;
-            bool actual = UserValidation.ValidateEmailId();
+            string expected = "true";
+            string actual = UserValidation.ValidateEmailId("abc.xyz@bl.co.in");
             Assert.AreEqual(actual, expected);
         }
         [Test]
         public void GivenMobileValid_ShouldReturnHappy()
         {
-            bool expected = true;
-            bool actual = UserValidation.ValidateMobileNumber();
+            string expected = "true";
+            string actual = UserValidation.ValidateMobileNumber("91 9919819801");
             Assert.AreEqual(actual, expected);
         }
         [Test]
         public void GivenPasswordValid_ShouldReturnHappy()
         {
-            bool expected = true;
-            bool actual = UserValidation.ValidatePasswordR4();
+            string expected = "true";
+            string actual = UserValidation.ValidatePassword("Sai@ram77");
             Assert.AreEqual(actual, expected);
         }
         public void GivenFirstNameValid_ShouldReturnSad()
         {
-            bool expected = true;
-            bool actual = UserValidation.ValidateFirstName();
+            string expected = "false";
+            string actual = UserValidation.ValidateFirstName("Chiku");
             Assert.AreEqual(actual, expected);
         }
         [Test]
         public void GivenLastNameInvalid_ShouldReturnSad()
         {
-            bool expected = false;
-            bool actual = UserValidation.ValidateLastName();
-            Assert.AreNotEqual(actual, expected);
+            string expected = "false";
+            string actual = UserValidation.ValidateLastName("Koli");
+            Assert.AreEqual(actual, expected);
         }
         [Test]
         public void GivenEmailInvalid_ShouldReturnSad()
         {
-            bool expected = false;
-            bool actual = UserValidation.ValidateEmailId();
-            Assert.AreNotEqual(actual, expected);
+            string expected = "false";
+            string actual = UserValidation.ValidateEmailId("abc@%*.com");
+            Assert.AreEqual(actual, expected);
         }
         [Test]
         public void GivenMobileInvalid_ShouldReturnSad()
         {
-            bool expected = false;
-            bool actual = UserValidation.ValidateMobileNumber();
-            Assert.AreNotEqual(actual, expected);
+            string expected = "false";
+            string actual = UserValidation.ValidateMobileNumber("911");
+            Assert.AreEqual(actual, expected);
         }
         [Test]
         public void GivenPasswordInvalid_ShouldReturnSad()
         {
-            bool expected = false;
-            bool actual = UserValidation.ValidatePasswordR4();
-            Assert.AreNotEqual(actual, expected);
-        }
-        [Test]
-        [TestCase("abc@yahoo.com", true)]
-        [TestCase("abc-100@abc.net", true)]
-        [TestCase("abc.100@abc.com.au", true)]
-        [TestCase("abc+100@gmail.com", true)]
-        [TestCase("abc.@gmail.com", true)]
 
-        public void ParameterizedTest(string emailid, bool expected)
-        {
-            bool actual = UserValidation.ValidateEmailId();
+            string expected = "false";
+            string actual = UserValidation.ValidatePassword("Sairam");
             Assert.AreEqual(actual, expected);
         }
+        
     }
 }
